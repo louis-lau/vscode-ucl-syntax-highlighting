@@ -10,8 +10,8 @@ patterns:
   - include: "#variables"
   - include: "#literals"
   - include: "#numbers"
-  - include: "#unquoted-strings"
   - include: "#keys"
+  - include: "#unquoted-strings"
   - include: "#punctuation"
 repository:
   comments:
@@ -88,6 +88,12 @@ repository:
     patterns:
       - name: variable.other.key.ucl
         match: "\\b[A-Za-z_][\\w.-]*\\b(?=\\s*[:=])"
+      - name: variable.other.key.ucl
+        match: "\\b[A-Za-z_][\\w.-]*\\b(?=\\s+\"(?:\\\\.|[^\"\\\\])*\"\\s*\\{)"
+      - name: variable.other.key.ucl
+        match: "\\b[A-Za-z_][\\w.-]*\\b(?=\\s+'(?:\\\\.|[^'\\\\])*'\\s*\\{)"
+      - name: variable.other.key.ucl
+        match: "\\b[A-Za-z_][\\w.-]*\\b(?=\\s+[A-Za-z_][\\w.-]*\\s*\\{)"
       - name: variable.other.key.ucl
         match: "\\b[A-Za-z_][\\w.-]*\\b(?=\\s*[\\[{])"
   punctuation:

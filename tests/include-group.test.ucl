@@ -1,0 +1,30 @@
+# SYNTAX TEST "source.ucl" "UCL include group"
+
+group "headers" {
+#<----- variable.other.key.ucl
+#     ^^^^^^^^^ string.quoted.double.ucl
+#               ^ punctuation.section.brackets.ucl
+
+    .include "$CONFDIR/scores.d/headers_group.conf"
+#   ^^^^^^^^ entity.name.function.macro.ucl
+#            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.ucl
+#             ^^^^^^^^ variable.other.ucl
+
+    .include(try=true; priority=1; duplicate=merge) "$LOCAL_CONFDIR/local.d/headers_group.conf"
+#   ^^^^^^^^ entity.name.function.macro.ucl
+#                ^^^^ constant.language.boolean.ucl
+#                               ^ constant.numeric.ucl
+#                                            ^^^^^ string.unquoted.ucl
+#                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.ucl
+#                                                    ^^^^^^^^^^^^^^ variable.other.ucl
+
+    .include(try=true; priority=10) "$LOCAL_CONFDIR/override.d/headers_group.conf"
+#   ^^^^^^^^ entity.name.function.macro.ucl
+#                ^^^^ constant.language.boolean.ucl
+#                               ^^ constant.numeric.ucl
+#                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.ucl
+#                                    ^^^^^^^^^^^^^^ variable.other.ucl
+
+}
+#<- punctuation.section.brackets.ucl
+
