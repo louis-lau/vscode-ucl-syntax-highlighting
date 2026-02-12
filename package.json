@@ -1,0 +1,25 @@
+{
+  "name": "ucl-syntax-highlighting",
+  "displayName": "UCL Syntax Highlighting",
+  "description": "Syntax highlighting for UCL, a configuration language primarily used for Rspamd",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.109.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "ucl",
+      "aliases": ["UCL", "ucl"],
+      "extensions": [".conf"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "ucl",
+      "scopeName": "source.ucl",
+      "path": "./syntaxes/ucl.tmLanguage.json"
+    }]
+  }
+}
