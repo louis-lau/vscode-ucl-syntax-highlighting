@@ -1,6 +1,6 @@
 {
   "name": "ucl-syntax-highlighting",
-  "displayName": "UCL Syntax Highlighting",
+  "displayName": "UCL (Rspamd)",
   "description": "Syntax highlighting for UCL, a configuration language primarily used for Rspamd",
   "version": "1.0.0",
   "publisher": "louis-lau",
