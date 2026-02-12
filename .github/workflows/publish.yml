@@ -1,13 +1,14 @@
 name: Publish Extension
 
 on:
-  release:
-    types: [published]
+  push:
+    tags: ['v*.*.*']
   workflow_dispatch:
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: publish
     permissions:
       contents: read
     steps:
