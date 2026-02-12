@@ -2,7 +2,7 @@
   "name": "ucl-syntax-highlighting",
   "displayName": "UCL (Rspamd)",
   "description": "Syntax highlighting for UCL, a configuration language primarily used for Rspamd",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "louis-lau",
   "repository": {
     "type": "git",
@@ -27,17 +27,29 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "ucl",
-      "aliases": ["UCL", "ucl", "rspamd"],
-      "extensions": [".conf", ".ucl", ".ucl.conf"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "ucl",
-      "scopeName": "source.ucl",
-      "path": "./syntaxes/ucl.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "ucl",
+        "aliases": [
+          "UCL",
+          "ucl",
+          "rspamd"
+        ],
+        "extensions": [
+          ".conf",
+          ".ucl",
+          ".ucl.conf"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ucl",
+        "scopeName": "source.ucl",
+        "path": "./syntaxes/ucl.tmLanguage.json"
+      }
+    ]
   },
   "devDependencies": {
     "js-yaml": "^4.1.0",
