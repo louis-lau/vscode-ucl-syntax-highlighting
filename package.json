@@ -21,7 +21,7 @@
     "test": "npx vscode-tmgrammar-test -c -g syntaxes/ucl.tmLanguage.json 'tests/**/*.test.ucl'"
   },
   "engines": {
-    "vscode": "^1.109.0"
+    "vscode": "^1.0.0"
   },
   "categories": [
     "Programming Languages"
