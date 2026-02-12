@@ -1,0 +1,14 @@
+# SYNTAX TEST "source.ucl" "UCL heredoc"
+
+text = <<EOD
+#        ^^^ constant.other.heredoc.delimiter.ucl
+
+line1
+#^^^^ string.unquoted.heredoc.ucl
+
+line2
+#^^^^ string.unquoted.heredoc.ucl
+
+EOD
+#^^ constant.other.heredoc.delimiter.ucl
+

@@ -1,0 +1,8 @@
+# SYNTAX TEST "source.ucl" "UCL comments"
+
+# line comment
+#^^^^^^^^^^^^^ comment.line.number-sign.ucl
+
+/* block comment */
+#^^^^^^^^^^^^^^^^^^ comment.block.ucl
+

@@ -1,0 +1,52 @@
+# SYNTAX TEST "source.ucl" "UCL example rspamd config"
+
+never_reject {
+#<------------ variable.other.key.ucl
+#            ^ punctuation.section.brackets.ucl
+
+  priority = high;
+# ^^^^^^^^ variable.other.key.ucl
+#          ^ punctuation.separator.ucl
+#            ^^^^ string.unquoted.ucl
+#                ^ punctuation.separator.ucl
+
+  rcpt = "/^(postmaster|abuse)@/i";
+# ^^^^ variable.other.key.ucl
+#        ^^^^^^^^^^^^^^^^^^^^^^^^^ string.quoted.double.ucl
+
+  apply {
+# ^^^^^ variable.other.key.ucl
+#       ^ punctuation.section.brackets.ucl
+
+    actions {
+#   ^^^^^^^ variable.other.key.ucl
+#           ^ punctuation.section.brackets.ucl
+
+      reject = null;
+#     ^^^^^^ variable.other.key.ucl
+#              ^^^^ constant.language.null.ucl
+
+      greylist = null;
+#     ^^^^^^^^ variable.other.key.ucl
+#                ^^^^ constant.language.null.ucl
+
+    }
+#   ^ punctuation.section.brackets.ucl
+
+  }
+# ^ punctuation.section.brackets.ucl
+
+  symbols [
+# ^^^^^^^ variable.other.key.ucl
+#         ^ punctuation.section.brackets.ucl
+
+    "NEVER_REJECT_RCPT",
+#   ^^^^^^^^^^^^^^^^^^^ string.quoted.double.ucl
+#                      ^ punctuation.separator.ucl
+
+  ]
+# ^ punctuation.section.brackets.ucl
+
+}
+#<- punctuation.section.brackets.ucl
+

@@ -1,0 +1,9 @@
+# SYNTAX TEST "source.ucl" "UCL variables"
+
+vars = $VAR ${VAR} $$ $${VAR} $OTHER;
+#      ^^^^ variable.other.ucl
+#           ^^^^^^ variable.other.ucl
+#                  ^^ constant.character.escape.ucl
+#                     ^^ constant.character.escape.ucl
+#                             ^^^^^^ variable.other.ucl
+

@@ -1,0 +1,11 @@
+# SYNTAX TEST "source.ucl" "UCL literals"
+
+enabled = true; disabled = off; empty = null; size = 10mb; ttl = 5min; hex = 0x1f; ratio = 1.5;
+#         ^^^^ constant.language.boolean.ucl
+#                          ^^^ constant.language.boolean.ucl
+#                                       ^^^^ constant.language.null.ucl
+#                                                    ^^^^ constant.numeric.ucl
+#                                                                ^^^^ constant.numeric.ucl
+#                                                                            ^^^^ constant.numeric.ucl
+#                                                                                          ^^^ constant.numeric.ucl
+

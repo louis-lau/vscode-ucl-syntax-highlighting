@@ -1,0 +1,18 @@
+# SYNTAX TEST "source.ucl" "UCL keys and structure"
+
+key = 1;
+#^^ variable.other.key.ucl
+#   ^ punctuation.separator.ucl
+
+other: 2,
+#^^^^ variable.other.key.ucl
+#    ^ punctuation.separator.ucl
+
+"json": 3
+#^^^^^ variable.other.key.ucl
+
+block { inner = 4; }
+#^^^^ variable.other.key.ucl
+#       ^^^^^ variable.other.key.ucl
+#     ^ punctuation.section.brackets.ucl
+

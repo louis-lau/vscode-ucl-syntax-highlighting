@@ -3,6 +3,11 @@
   "displayName": "UCL Syntax Highlighting",
   "description": "Syntax highlighting for UCL, a configuration language primarily used for Rspamd",
   "version": "0.0.1",
+  "scripts": {
+    "convert-grammar": "npx js-yaml syntaxes/ucl.tmLanguage.yml > syntaxes/ucl.tmLanguage.json",
+    "pretest": "npm run convert-grammar",
+    "test": "npx vscode-tmgrammar-test -c -g syntaxes/ucl.tmLanguage.json 'tests/**/*.test.ucl'"
+  },
   "engines": {
     "vscode": "^1.109.0"
   },
@@ -13,7 +18,7 @@
     "languages": [{
       "id": "ucl",
       "aliases": ["UCL", "ucl"],
-      "extensions": [".conf"],
+      "extensions": [".conf", ".ucl"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
@@ -21,5 +26,9 @@
       "scopeName": "source.ucl",
       "path": "./syntaxes/ucl.tmLanguage.json"
     }]
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "vscode-tmgrammar-test": "^0.1.3"
   }
 }

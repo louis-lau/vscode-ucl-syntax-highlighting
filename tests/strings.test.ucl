@@ -1,0 +1,11 @@
+# SYNTAX TEST "source.ucl" "UCL strings"
+
+msg = "hello\n$USER";
+#     ^^^^^^^^^^^^^^ string.quoted.double.ucl
+#           ^^ constant.character.escape.ucl
+#             ^^^^^ variable.other.ucl
+
+single = 'it\'s fine';
+#        ^^^^^^^^^^^^ string.quoted.single.ucl
+#           ^^ constant.character.escape.ucl
+

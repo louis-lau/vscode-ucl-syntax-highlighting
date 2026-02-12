@@ -1,0 +1,7 @@
+# SYNTAX TEST "source.ucl" "UCL macros"
+
+.include "file.conf"; .priority 3; .macro_name(param=1)
+#^^^^^^^ entity.name.function.macro.ucl
+#                     ^^^^^^^^^ entity.name.function.macro.ucl
+#                                  ^^^^^^^^^^^ entity.name.function.macro.ucl
+

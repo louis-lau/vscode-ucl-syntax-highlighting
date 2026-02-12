@@ -1,0 +1,98 @@
+$schema: https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
+name: UCL
+scopeName: source.ucl
+patterns:
+  - include: "#comments"
+  - include: "#heredoc"
+  - include: "#key-strings"
+  - include: "#strings"
+  - include: "#macros"
+  - include: "#variables"
+  - include: "#literals"
+  - include: "#numbers"
+  - include: "#unquoted-strings"
+  - include: "#keys"
+  - include: "#punctuation"
+repository:
+  comments:
+    patterns:
+      - name: comment.line.number-sign.ucl
+        begin: "#"
+        end: "$"
+      - name: comment.block.ucl
+        begin: "/\\*"
+        end: "\\*/"
+  heredoc:
+    name: string.unquoted.heredoc.ucl
+    begin: "<<([A-Z][A-Z0-9_]*)"
+    beginCaptures:
+      "1":
+        name: constant.other.heredoc.delimiter.ucl
+    end: "^\\1$"
+    endCaptures:
+      "0":
+        name: constant.other.heredoc.delimiter.ucl
+  key-strings:
+    patterns:
+      - name: variable.other.key.ucl
+        match: "\"(?:\\\\.|[^\"\\\\])*\"(?=\\s*:)"
+  strings:
+    patterns:
+      - name: string.quoted.double.ucl
+        begin: '"'
+        end: '"'
+        patterns:
+          - include: "#string-escapes"
+          - include: "#variables"
+      - name: string.quoted.single.ucl
+        begin: "'"
+        end: "(?<!\\\\)'"
+        patterns:
+          - name: constant.character.escape.ucl
+            match: "\\\\'"
+          - name: constant.character.escape.ucl
+            match: "\\\\\\\\"
+  string-escapes:
+    patterns:
+      - name: constant.character.escape.ucl
+        match: "\\\\(?:[\\\\nrt\"']|x[0-9A-Fa-f]{2}|u[0-9A-Fa-f]{4})"
+  macros:
+    patterns:
+      - name: entity.name.function.macro.ucl
+        match: "\\.[A-Za-z_][\\w-]*"
+  variables:
+    patterns:
+      - name: constant.character.escape.ucl
+        match: "\\$\\$"
+      - name: variable.other.ucl
+        match: "\\$\\{[A-Za-z_][\\w]*\\}"
+      - name: variable.other.ucl
+        match: "\\$[A-Za-z_][\\w]*"
+  literals:
+    patterns:
+      - name: constant.language.boolean.ucl
+        match: "\\b(true|false|yes|no|on|off)\\b"
+      - name: constant.language.null.ucl
+        match: "\\bnull\\b"
+  numbers:
+    patterns:
+      - name: constant.numeric.ucl
+        match: "\\b0x[0-9A-Fa-f]+\\b"
+      - name: constant.numeric.ucl
+        match: "\\b\\d+(?:\\.\\d+)?(?i:(?:[kmg]b|[kmg]|ms|min|s|h|d|w|y))?\\b"
+  unquoted-strings:
+    patterns:
+      - name: string.unquoted.ucl
+        match: "\\b[A-Za-z_][\\w.-]*\\b(?!\\s*[:=\\[{])"
+  keys:
+    patterns:
+      - name: variable.other.key.ucl
+        match: "\\b[A-Za-z_][\\w.-]*\\b(?=\\s*[:=])"
+      - name: variable.other.key.ucl
+        match: "\\b[A-Za-z_][\\w.-]*\\b(?=\\s*[\\[{])"
+  punctuation:
+    patterns:
+      - name: punctuation.section.brackets.ucl
+        match: "[{}\\[\\]()]"
+      - name: punctuation.separator.ucl
+        match: "[,:;=]"

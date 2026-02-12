@@ -1,4 +1,9 @@
-.vscode/**
-.vscode-test/**
-.gitignore
-vsc-extension-quickstart.md
+# Ignore all files by default
+**/*
+
+# Explicitly include only files required for the extension
+!package.json
+!README.md
+!LICENSE
+!language-configuration.json
+!syntaxes/**/*.json
