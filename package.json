@@ -2,7 +2,7 @@
   "name": "ucl-syntax-highlighting",
   "displayName": "UCL (Rspamd)",
   "description": "Syntax highlighting for UCL, a configuration language primarily used for Rspamd",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "publisher": "louis-lau",
   "repository": {
     "type": "git",
