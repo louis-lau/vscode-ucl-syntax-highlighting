@@ -2,7 +2,19 @@
   "name": "ucl-syntax-highlighting",
   "displayName": "UCL Syntax Highlighting",
   "description": "Syntax highlighting for UCL, a configuration language primarily used for Rspamd",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "publisher": "louis-lau",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/louis-lau/vscode-ucl-syntax-highlighting.git"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "ucl",
+    "rspamd",
+    "syntax",
+    "highlighting"
+  ],
   "scripts": {
     "convert-grammar": "npx js-yaml syntaxes/ucl.tmLanguage.yml > syntaxes/ucl.tmLanguage.json",
     "pretest": "npm run convert-grammar",
@@ -17,8 +29,8 @@
   "contributes": {
     "languages": [{
       "id": "ucl",
-      "aliases": ["UCL", "ucl"],
-      "extensions": [".conf", ".ucl"],
+      "aliases": ["UCL", "ucl", "rspamd"],
+      "extensions": [".conf", ".ucl", ".ucl.conf"],
       "configuration": "./language-configuration.json"
     }],
     "grammars": [{
